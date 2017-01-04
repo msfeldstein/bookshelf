@@ -1,0 +1,18 @@
+.BookGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.BookGrid .Book {
+  box-sizing: border-box;
+  width: 33%;
+  padding: 30px;  
+}
+
+.BookGrid .Cover img {
+  height: 400px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px  rgba(0,0,0,0.5);
+}
