@@ -3,6 +3,7 @@ import fetch from 'isomorphic-fetch'
 export const REQUEST_BOOKS = 'REQUEST_BOOKS'
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS'
 export const SELECT_USER = 'SELECT_USER'
+export const SELECT_BOOK = 'SELECT_BOOK'
 
 export function selectUser(user) {
   return {
@@ -37,5 +38,13 @@ export function fetchBooks(user) {
       .then(json => {
         dispatch(receiveBooks(user, json))
       })
+  }
+}
+
+export function selectBook(book) {
+  console.log("YIS")
+  return {
+    type: SELECT_BOOK,
+    book: book
   }
 }

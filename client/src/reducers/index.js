@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { REQUEST_BOOKS, RECEIVE_BOOKS, SELECT_USER } from '../actions/books'
+import { REQUEST_BOOKS, RECEIVE_BOOKS, SELECT_USER, SELECT_BOOK } from '../actions/books'
 
 function selectedUser(state = 'defaultuser', action) {
   switch (action.type) {
@@ -41,8 +41,19 @@ function booksByUser(state = {}, action) {
       return state
   }
 }
+
+function selectedBook(state = {}, action) {
+  switch(action.type) {
+    case SELECT_BOOK:
+      return action.book
+    default: 
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   selectedUser,
-  booksByUser
+  booksByUser,
+  selectedBook
 })
 export default rootReducer
